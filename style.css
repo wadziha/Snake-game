@@ -17,3 +17,12 @@ background-color: black;
     grid-template-columns: repeat(21,1fr);
 
 }
+
+.snake{
+background-color: chartreuse;
+
+}
+
+.food{
+    background-color:red;
+}
