@@ -37,6 +37,41 @@ function pokud_se_srazi(snake) {
     return false;
 }
 function game_draw(){
+// 
+if (pokud_se_srazi(snake_pozice)) {
+    vstupni_souradnice = {x: 0, y: 0};
+    alert("Game Over!'");
+    snake_pozice = [{x: 11, y: 11}];
+    skore = 0;
+}
+
+// jestlize had sni jidlo, zvysujeme skore a vygenerujese nove pozice jidla 
+if (snake_pozice[0].y === jidlo.y && snake_pozice[0].x === jidlo.x) {
+    skore += 1;
+    if (skore > nejvyssi_skore) {
+        nejvyssi_skore = skore;
+        localStorage.setItem("nej_skore", JSON.stringify({
+            player: aktualni_jmeno_hrace,
+            nejvyssi_skore: nejvyssi_skore
+        }));
+        nej_hrac.innerHTML = "Hráč s nejlepším skóre: " + aktualni_jmeno_hrace;
+        nej_vysledek.innerHTML = "Nejlepší skóre: " + nejvyssi_skore;
+    }
+    aktualni_skore.innerHTML = "Skóre: " + skore;
+    snake_pozice.unshift({x: snake_pozice[0].x + vstupni_souradnice.x, y: snake_pozice[0].y + vstupni_souradnice.y});
+    let a = 2;
+    let b = 23;
+    jidlo = {x: Math.round(a + (b - a) * Math.random()), y: Math.round(a + (b - a) * Math.random())}
+}
+
+//pohyb hada 
+for (let i = snake_pozice.length - 2; i >= 0; i--) {
+    snake_pozice[i + 1] = {...snake_pozice[i]};
+}
+
+
+snake_pozice[0].x += vstupni_souradnice.x;
+snake_pozice[0].y += vstupni_souradnice.y;
 
    //zobrazeni hada 
     hraci_plocha.innerHTML = "";
