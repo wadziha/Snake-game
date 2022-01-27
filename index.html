@@ -17,7 +17,20 @@
     <div class="plocha"> 
         <div id="hraci_plocha"></div>
         </div>
+        div id="modal-dialog" class="modal">
+        <div class="modal-content">
+           
+            <!-- v atributu action je js ktery zabranuje refresh stranky-->
+            <form action="javascript:void(0);" onsubmit="submitModal()">
+                <label for="jmeno_hrace">Jméno hráče</label><br>
+                <input type="text" id="jmeno_hrace" name="jmeno_hrace"><br>
+                <input type="submit" value="Hrát">
+            </form>
+        </div>
+    </div>
+    
+    </body>
+    <script src="modal.js"></script>
+    <script src="snake.js"></script>
 
-
-</body>
 </html>

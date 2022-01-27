@@ -3,8 +3,9 @@ let rychlost_hada = 10;
 let skore = 0;
 let cas_posledni_vykresleni = 0;
 let snake_pozice = [{x: 19, y: 11}];
-];
-food_segment={x: 13, y: 14};
+jidlo = {x: 6, y: 7};
+
+
 function main(aktualni_cas) {
     window.requestAnimationFrame(main);
     // console.log(aktualni_cas)
@@ -16,6 +17,10 @@ function main(aktualni_cas) {
 }
 
 
+function nastav_hrace(jmeno) {
+    aktualni_jmeno_hrace = jmeno
+    aktualni_Hrac.innerHTML = "Hráč: " + jmeno
+}
 
 function game_draw(){
 
@@ -34,5 +39,5 @@ function game_draw(){
     foodElement.style.gridColumnStart = jidlo.x;
     foodElement.classList.add('jidlo')
     hraci_plocha.appendChild(foodElement);
-    
+}
     window.requestAnimationFrame(main);
