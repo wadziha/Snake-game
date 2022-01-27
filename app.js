@@ -1,1 +1,0 @@
-var request= windows.indexedDB.open("game_score",1);
