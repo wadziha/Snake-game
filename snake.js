@@ -90,3 +90,56 @@ snake_pozice[0].y += vstupni_souradnice.y;
     hraci_plocha.appendChild(foodElement);
 }
     window.requestAnimationFrame(main);
+//po nacteni stranky si pricteme data (nejvyssi skore) z localStorache
+let nej_skore = localStorage.getItem("nej_skore");
+if (nej_skore === null) {
+    nejvyssi_skore = 0;
+    localStorage.setItem("nej_skore", JSON.stringify({
+        player: aktualni_jmeno_hrace,
+        nejvyssi_skore: nejvyssi_skore
+    }))
+} else {
+    const data = JSON.parse(nej_skore);
+    nejvyssi_skore = data.nejvyssi_skore;
+    nej_hrac.innerHTML = "Hráč s nejlepším skóre: " + data.player;
+    nej_vysledek.innerHTML = "Nejlepší skóre: " + data.nejvyssi_skore;
+}
+
+window.requestAnimationFrame(main);
+window.addEventListener('keydown', e => {
+
+    if (aktualni_jmeno_hrace == null) {
+        return
+    }
+
+    // Hra zacina 
+    vstupni_souradnice = {x: 0, y: 1} 
+
+    switch (e.key) {
+        case "ArrowUp":
+            console.log("ArrowUp");
+            vstupni_souradnice.x = 0;
+            vstupni_souradnice.y = -1;
+            break;
+
+        case "ArrowDown":
+            console.log("ArrowDown");
+            vstupni_souradnice.x = 0;
+            vstupni_souradnice.y = 1;
+            break;
+
+        case "ArrowLeft":
+            console.log("ArrowLeft");
+            vstupni_souradnice.x = -1;
+            vstupni_souradnice.y = 0;
+            break;
+
+        case "ArrowRight":
+            console.log("ArrowRight");
+            vstupni_souradnice.x = 1;
+            vstupni_souradnice.y = 0;
+            break;
+        default:
+            break;
+    }
+});
