@@ -9,6 +9,43 @@
     margin-right: auto;
     width: 90vmin;
 }
+
+#aktualni_Hrac{
+    text-align: center;
+    top: 10px;
+    right: 140px;
+    font-size: 15px;
+    font-weight: bold;
+    font-family: 'New Tegomin', serif;
+}
+
+#aktualni_skore{
+    text-align: center;
+    top: 60px;
+    right: 200px;
+    font-size: 15px;
+    font-weight: bold;
+    font-family: 'New Tegomin', serif;
+}
+
+#nej_hrac{
+    text-align: center;
+    top: 110px;
+    right: 140px;
+    font-size: 15px;
+    font-weight: bold;
+    font-family: 'New Tegomin', serif;
+}
+
+#nej_vysledek{
+    text-align: center;
+    top: 110px;
+    right: 190px;
+    font-size: 15px;
+    font-weight: bold;
+    font-family: 'New Tegomin', serif;
+}
+
 #hraci_plocha{
     background-image: url("plocha.jpeg");
     width: 80vmin;
@@ -50,4 +87,5 @@
     border: 1px solid #888;
     width: 40%; /* Could be more or less, depending on screen size */
 }
+
 
