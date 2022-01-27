@@ -3,8 +3,13 @@ let rychlost_hada = 10;
 let skore = 0;
 let cas_posledni_vykresleni = 0;
 let snake_pozice = [{x: 19, y: 11}];
-jidlo = {x: 6, y: 7};
 
+var aktualni_jmeno_hrace = null
+
+function nastav_hrace(jmeno) {
+    aktualni_jmeno_hrace = jmeno
+    aktualni_Hrac.innerHTML = "Hráč: " + jmeno
+}
 
 function main(aktualni_cas) {
     window.requestAnimationFrame(main);
@@ -17,11 +22,20 @@ function main(aktualni_cas) {
 }
 
 
-function nastav_hrace(jmeno) {
-    aktualni_jmeno_hrace = jmeno
-    aktualni_Hrac.innerHTML = "Hráč: " + jmeno
-}
+function pokud_se_srazi(snake) {
+    // pokud narazi had sam na sebe 
+    for (let i = 1; i < snake_pozice.length; i++) {
+        if (snake[i].x === snake[0].x && snake[i].y === snake[0].y) {
+            return true;
+        }
+    }
+    // pokud narazi had do zdi
+    if (snake[0].x >= 25 || snake[0].x <= 0 || snake[0].y >= 25 || snake[0].y <= 0) {
+        return true;
+    }
 
+    return false;
+}
 function game_draw(){
 
    //zobrazeni hada 
