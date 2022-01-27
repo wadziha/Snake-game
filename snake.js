@@ -19,7 +19,6 @@ function main(aktualni_cas) {
 
 function game_draw(){
 
-    // Show snake - Display
    //zobrazeni hada 
     hraci_plocha.innerHTML = "";
     snake_pozice.forEach((e, index) => {
