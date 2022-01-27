@@ -4,33 +4,34 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Game-Snake</title>
+    <title>Snake</title>
     <link rel="stylesheet" href="style.css">
-
-<script src="snake.js"></script>
-
-    <script src="app.js"></script>
-   
 </head>
 <body>
-    <H1>Snake Game</H1>
-    <div class="plocha"> 
-        <div id="hraci_plocha"></div>
-        </div>
-        div id="modal-dialog" class="modal">
-        <div class="modal-content">
-           
-            <!-- v atributu action je js ktery zabranuje refresh stranky-->
-            <form action="javascript:void(0);" onsubmit="submitModal()">
-                <label for="jmeno_hrace">Jméno hráče</label><br>
-                <input type="text" id="jmeno_hrace" name="jmeno_hrace"><br>
-                <input type="submit" value="Hrát">
-            </form>
-        </div>
-    </div>
-    
-    </body>
-    <script src="modal.js"></script>
-    <script src="snake.js"></script>
 
+<div id="aktualni_Hrac">Hráč: -</div>
+<div id="aktualni_skore">Skóre: 0</div>
+<hr>
+<div id="nej_vysledek">Nejlepší skóre: 0</div>
+<div id="nej_hrac">Hráč s nejlepším skóre: -</div>
+<br>
+<div class="plocha"> 
+<div id="hraci_plocha"></div>
+</div>
+<div id="modal-dialog" class="modal">
+    <div class="modal-content">
+       
+        <!-- v atributu action je js ktery zabranuje refresh stranky-->
+        <form action="javascript:void(0);" onsubmit="submitModal()">
+            <label for="jmeno_hrace">Jméno hráče</label><br>
+            <input type="text" id="jmeno_hrace" name="jmeno_hrace"><br>
+            <input type="submit" value="Hrát">
+        </form>
+    </div>
+</div>
+
+</body>
+<script src="modal.js"></script>
+<script src="snake.js"></script>
 </html>
+
