@@ -4,6 +4,7 @@ let skore = 0;
 let cas_posledni_vykresleni = 0;
 let snake_pozice = [{x: 19, y: 11}];
 
+jidlo = {x: 6, y: 7};
 var aktualni_jmeno_hrace = null
 
 function nastav_hrace(jmeno) {
